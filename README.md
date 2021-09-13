@@ -6,6 +6,12 @@ _Install_
 npm install
 ```
 
+_Build_
+
+```bash
+npm run build
+```
+
 _Start_
 
 ```bash
