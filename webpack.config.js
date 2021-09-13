@@ -12,7 +12,7 @@ const getConfig = (target) => ({
   devtool: "hidden-source-map",
   output: {
     path: path.resolve(__dirname, "dist", target),
-    publicPath: `http://localhost:3002/${target}/`,
+    publicPath: `https://app2.ssr.aws.cagatay.dev/${target}/`,
     clean: true,
   },
   devServer: {
