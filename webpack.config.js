@@ -8,7 +8,7 @@ const packageJson = require("./package.json");
 const getConfig = (target) => ({
   entry: "./src/index.js",
   target: target === "web" ? "web" : false,
-  mode: "development",
+  mode: "production",
   devtool: "hidden-source-map",
   output: {
     path: path.resolve(__dirname, "dist", target),
