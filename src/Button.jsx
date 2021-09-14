@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
-const Button = () => {
-  const [joke, setJoke] = React.useState("");
+const Button = (prop) => {
+  const [joke, setJoke] = React.useState(prop.value);
   useState(() => {
-    console.log("Button loading");
-    fetch("https://api.chucknorris.io/jokes/random")
-      .then((res) => res.json())
-      .then((data) => setJoke(data.value));
+    if (prop.value) {
+      console.log("Button loaded from SSR");
+    } else {
+      console.log("Button loading from client side");
+      fetch("https://api.chucknorris.io/jokes/random")
+        .then((res) => res.json())
+        .then((data) => setJoke(data.value));
+    }
   }, []);
-  return <button>App2 Button {joke} quote</button>;
+  return <button>{joke}</button>;
 };
 
 export default Button;
