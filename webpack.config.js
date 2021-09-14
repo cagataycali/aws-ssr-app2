@@ -8,11 +8,12 @@ const packageJson = require("./package.json");
 const getConfig = (target) => ({
   entry: "./src/index.js",
   target: target === "web" ? "web" : false,
-  mode: "production",
+  mode: "development",
   devtool: "hidden-source-map",
   output: {
     path: path.resolve(__dirname, "dist", target),
-    publicPath: `https://app2.ssr.aws.cagatay.dev/${target}/`,
+    // publicPath: `http://localhost:3002/${target}/`, // TODO: @cagatay process.env
+    publicPath: `https://app2.ssr.cagatay.dev/${target}/`,
     clean: true,
   },
   devServer: {
